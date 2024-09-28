@@ -1,14 +1,23 @@
 version: '1'
 services:
   db:
-    image: postgres:14
-    container_name: db
+    image: mysql:8
+    container_name: mysql-db
+    hostname: mysql
+    command:
+      --collation-server=utf8mb4_0900_bin
+      --transaction-isolation=READ-COMMITTED
+    restart: always
     environment:
-      POSTGRES_USER: local_user
-      POSTGRES_PASSWORD: local_password
-      POSTGRES_DB: local_db
+      MYSQL_DATABASE: database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      TZ: Asia/Tokyo
     networks:
       - app-network
+    ports:
+      - "3306:3306"
 
   backend:
     build:
@@ -18,7 +27,7 @@ services:
       - .:/workspace:cached
     command: sleep infinity
     environment:
-      DATABASE_URL: postgres://local_user:local_password@db:5432/local_db
+      DATABASE_URL: mysql://user:password@db:3306/database
     depends_on:
       - db
     networks:
