@@ -6,8 +6,8 @@ DATABASES = {
         'NAME': 'database',
         'USER': 'user',
         'PASSWORD': 'password',
-        'HOST': 'host.docker.internal',
-        'PORT': '53306',
+        'HOST': 'db',
+        'PORT': '3306',
         'ATOMIC_REQUESTS': True,
     }
 }

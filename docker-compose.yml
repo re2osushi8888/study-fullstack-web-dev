@@ -17,7 +17,7 @@ services:
     networks:
       - app-network
     ports:
-      - 53306:3306
+      - "3306:3306"
 
   backend:
     build:
@@ -27,7 +27,7 @@ services:
       - .:/workspace:cached
     command: sleep infinity
     environment:
-      DATABASE_URL: postgres://local_user:local_password@db:5432/local_db
+      DATABASE_URL: mysql://user:password@db:3306/database
     depends_on:
       - db
     networks:
