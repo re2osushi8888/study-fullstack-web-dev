@@ -17,3 +17,12 @@ $ sudo apt install iputils-ping net-tools
 $ ping db
 $ ping frontend
 ```
+## dbの接続方法
+```
+# クライアントのインストール
+$ sudo apt update
+$ sudo apt install mariadb-client
+
+# 接続
+$ mysql -u user -h db -p -D database
+```
