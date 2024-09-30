@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "dev-container-test"
+name = "backend"
 version = "0.1.0"
 description = ""
-authors = ["r-yamamoto <r-yamamoto@creationline.com>"]
+authors = ["re2osushi8888 <re.2osushi8888@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
