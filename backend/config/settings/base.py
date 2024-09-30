@@ -53,7 +53,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = ['http://frontend:3000']  # フロントエンドが動作するポート
+# CORS_ALLOWED_ORIGINS = ['http://frontend:3000']  # フロントエンドが動作するポート
+CORS_ALLOW_ALL_ORIGINS = True  # CORSの設定をすべて通す
 
 ROOT_URLCONF = 'config.urls'
 
