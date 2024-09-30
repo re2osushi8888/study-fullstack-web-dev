@@ -20,21 +20,26 @@
         "settings": {
           "editor.formatOnSave": true,
           "editor.defaultFormatter": "ms-python.black-formatter",
-          "python.formatting.blackArgs": [
-            "skip-string-normalization",
-            "--line-length=120"
+          "[python]": {
+            "python.defaultInterpreterPath": "${workspaceFolder}/backend/src/.venv/bin/python",
+            "python.formatting.blackArgs": [
+              "skip-string-normalization",
+              "--line-length=120"
+            ],
+            "mypy-type-checker.path": ["${workspaceFolder}/backend/src/.venv/bin/mypy"],
+            "mypy-type-checker.args": ["--config=${workspaceFolder}/backend/pyproject.toml"]
+          },
+          "pylint.args": [
+            "--load-plugins",
+            "pylint_django",
+            "--django-settings-module",
+            "config.settings.development"
           ]
-        },
-        "pylint.args": [
-          "--load-plugins",
-          "pylint_django",
-          "--django-settings-module",
-          "config.settings.development"
-        ]
+        }
+    },
+    "features": {
+      "ghcr.io/devcontainers/features/aws-cli:1": {},
+      "ghcr.io/devcontainers/features/git:1": {}
     }
-  },
-  "features": {
-    "ghcr.io/devcontainers/features/aws-cli:1": {},
-    "ghcr.io/devcontainers/features/git:1": {}
   }
 }
