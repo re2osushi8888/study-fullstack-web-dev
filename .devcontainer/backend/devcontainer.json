@@ -29,6 +29,10 @@
             "mypy-type-checker.path": ["${workspaceFolder}/backend/src/.venv/bin/mypy"],
             "mypy-type-checker.args": ["--config=${workspaceFolder}/backend/pyproject.toml"]
           },
+          "python.analysis.extraPaths": [
+            "${workspaceFolder}/backend",
+            "${workspaceFolder}/backend/.venv/lib/python3.12/site-packages"
+          ],
           "pylint.args": [
             "--load-plugins",
             "pylint_django",
