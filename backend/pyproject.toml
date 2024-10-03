@@ -26,13 +26,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
-select = [
-  "E", # black
-  "F", # Flake8
-  "I", # isort
-]
 line-length = 120
-fix = true
 indent-width = 4
 src = ["src", "test"]
 exclude = [
@@ -44,7 +38,11 @@ exclude = [
 ]
 
 [tool.ruff.lint]
-select = ["E", "F", "I"]
+select = [
+  "E", # black
+  "F", # Flake8
+  "I", # isort
+]
 
 [tool.ruff.format]
 quote-style = "single"
