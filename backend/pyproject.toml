@@ -43,23 +43,11 @@ exclude = [
     ".venv",
 ]
 
-[tool.ruff.analyze]
-
-
 [tool.ruff.lint]
 select = ["E", "F", "I"]
 
 [tool.ruff.format]
 quote-style = "single"
-indent-style = "tab"
-docstring-code-format = true
-
-[tool.black]
-line_length = 120
-skip-string-normalization = true
-
-[tool.isort]
-profile = "black"
 
 [tool.mypy]
 show_error_context = true
