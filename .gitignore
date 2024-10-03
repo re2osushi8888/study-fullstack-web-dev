@@ -2,7 +2,7 @@
 __pycache__
 .venv
 .mypy_cache
-
+.ruff_cache
 
 # typescripts
 node_modules
