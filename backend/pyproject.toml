@@ -1,29 +1,26 @@
-[tool.poetry]
+[project]
 name = "backend"
 version = "0.1.0"
-description = ""
-authors = ["re2osushi8888 <re.2osushi8888@gmail.com>"]
+python = "3.12"
+description = "Add your description here"
 readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=5.1.1",
+    "django-cors-headers>=4.4.0",
+    "djangorestframework>=3.15.2",
+    "mysqlclient>=2.2.4",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-djangorestframework = "^3.15.2"
-django = "^5.1.1"
-mysqlclient = "^2.2.4"
-django-cors-headers = "^4.4.0"
-
-
-[tool.poetry.group.dev.dependencies]
-pytest-watch = "^4.2.0"
-pytest = "^8.3.2"
-mypy = "^1.11.2"
-djangorestframework-stubs = {extras = ["compatible-mypy"], version = "^3.15.1"}
-django-stubs = "^5.1.0"
-ruff = "^0.6.8"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+dev-dependencies = [
+    "django-stubs>=5.1.0",
+    "djangorestframework-stubs>=3.15.1",
+    "mypy>=1.11.2",
+    "pytest>=8.3.3",
+    "pytest-watch>=4.2.0",
+    "ruff>=0.6.8",
+]
 
 [tool.ruff]
 line-length = 120
