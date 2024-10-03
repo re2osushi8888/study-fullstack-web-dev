@@ -26,14 +26,14 @@
             },
             "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
             "mypy-type-checker.path": ["${workspaceFolder}/backend/.venv/bin/mypy"],
-            "mypy-type-checker.args": ["--config=${workspaceFolder}/backend/pyproject.toml"]
+            "mypy-type-checker.args": ["--config=${workspaceFolder}/backend/pyproject.toml"],
+            "ruff.nativeServer": "on",
+            "ruff.configuration": "${workspaceFolder}/backend/pyproject.toml"
           },
           "python.analysis.extraPaths": [
             "${workspaceFolder}/backend",
             "${workspaceFolder}/backend/.venv/lib/python3.12/site-packages"
           ],
-          "ruff.nativeServer": "on",
-          "ruff.configuration": "${workspaceFolder}/backend/pyproject.toml",
           "pylint.args": [
             "--load-plugins",
             "pylint_django",
