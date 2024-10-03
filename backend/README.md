@@ -26,3 +26,14 @@ $ sudo apt install mariadb-client
 # 接続
 $ mysql -u user -h db -p -D database
 ```
+## ruff メモ
+```
+# 構文チェック
+$ ruff check PATH
+
+# 構文チェックしたうえで直す
+$ ruff check PATH --fix
+
+# format
+$ ruff format PATH
+```

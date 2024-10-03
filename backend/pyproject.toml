@@ -16,22 +16,36 @@ django-cors-headers = "^4.4.0"
 [tool.poetry.group.dev.dependencies]
 pytest-watch = "^4.2.0"
 pytest = "^8.3.2"
-black = "^24.8.0"
-isort = "^5.13.2"
 mypy = "^1.11.2"
 djangorestframework-stubs = {extras = ["compatible-mypy"], version = "^3.15.1"}
 django-stubs = "^5.1.0"
+ruff = "^0.6.8"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.black]
-line_length = 120
-skip-string-normalization = true
+[tool.ruff]
+line-length = 120
+indent-width = 4
+src = ["src", "test"]
+exclude = [
+    ".git",
+    ".git-rewrite",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".venv",
+]
 
-[tool.isort]
-profile = "black"
+[tool.ruff.lint]
+select = [
+  "E", # black
+  "F", # Flake8
+  "I", # isort
+]
+
+[tool.ruff.format]
+quote-style = "single"
 
 [tool.mypy]
 show_error_context = true
