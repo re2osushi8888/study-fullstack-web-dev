@@ -22,15 +22,14 @@
 					"quickfix.biome": "always",
 					"source.organizeImports.biome": "always"
 				},
-				"npm.packageManager": "bun",
-				"cSpell.words": [
-					"biomejs",
-					"devcontainer",
-					"pmneo",
-					"quickfix",
-					"tsimporter",
-					"yoavbls",
-					"tailwindcss"
+				"cSpell.ignorePaths": [
+					"**/package.json",
+					"**/settings.json",
+					"**/node_modules/**",
+					"**/vscode-extension/**",
+					"**/.vscode/**",
+					"**/yarn.lock",
+					"**/devcontainer.json"
 				]
 			}
 		}
