@@ -3,7 +3,7 @@
   "dockerComposeFile": ["../../docker-compose.yml"],
   "service": "backend",
   "shutdownAction": "none",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspace/backend",
   "customizations": {
     "vscode": {
         "extensions":[
@@ -24,15 +24,15 @@
               "source.organizeImports": "always",
               "source.fixAll.ruff": "always"
             },
-            "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
-            "mypy-type-checker.args": ["--config=${workspaceFolder}/backend/pyproject.toml"],
+            "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+            "mypy-type-checker.args": ["--config=${workspaceFolder}/pyproject.toml"],
             "ruff.nativeServer": "on",
-            "ruff.configuration": "${workspaceFolder}/backend/pyproject.toml"
+            "ruff.configuration": "${workspaceFolder}/pyproject.toml"
           },
-          "python.analysis.extraPaths": [
-            "${workspaceFolder}/backend"
-            // "${workspaceFolder}/backend/.venv/lib/python3.12/site-packages"
-          ]
+          // "python.analysis.extraPaths": [
+          //   "${workspaceFolder}/backend"
+          //   // "${workspaceFolder}/backend/.venv/lib/python3.12/site-packages"
+          // ]
           // "pylint.args": [
           //   "--load-plugins",
           //   "pylint_django",
