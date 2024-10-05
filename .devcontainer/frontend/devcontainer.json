@@ -22,6 +22,7 @@
 					"quickfix.biome": "always",
 					"source.organizeImports.biome": "always"
 				},
+				"npm.packageManager": "bun",
 				"cSpell.words": [
 					"biomejs",
 					"devcontainer",
@@ -37,6 +38,7 @@
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/devcontainers-community/npm-features/typescript:1": {},
-		"ghcr.io/devcontainers/features/git:1": {}
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/shyim/devcontainers-features/bun:0": {}
 	}
 }
