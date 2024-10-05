@@ -1,46 +1,53 @@
 {
   "name": "Backend Container",
-  "dockerComposeFile": ["../../docker-compose.yml"],
+  "dockerComposeFile": [
+    "../../docker-compose.yml"
+  ],
   "service": "backend",
   "shutdownAction": "none",
   "workspaceFolder": "/workspace",
+  //"workspaceFolder": "/workspace/backend",
   "customizations": {
     "vscode": {
-        "extensions":[
-          "ms-python.python",
-          "njpwerner.autodocstring",
-          "oderwat.indent-rainbow",
-          "usernamehw.errorlens",
-          "shardulm94.trailing-spaces",
-          "ms-python.mypy-type-checker",
-          "charliermarsh.ruff"
-        ],
-        "settings": {
+      "extensions": [
+        "ms-python.python",
+        "njpwerner.autodocstring",
+        "oderwat.indent-rainbow",
+        "usernamehw.errorlens",
+        "shardulm94.trailing-spaces",
+        "ms-python.mypy-type-checker",
+        "charliermarsh.ruff",
+        "streetsidesoftware.code-spell-checker",
+        "biomejs.biome"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "biomejs.biome",
+        "[python]": {
           "editor.formatOnSave": true,
-          "[python]": {
-            "editor.formatOnSave": true,
-            "editor.defaultFormatter": "charliermarsh.ruff",
-            "editor.codeActionsOnSave": {
-              "source.organizeImports": "always",
-              "source.fixAll.ruff": "always"
-            },
-            "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
-            "mypy-type-checker.path": ["${workspaceFolder}/backend/.venv/bin/mypy"],
-            "mypy-type-checker.args": ["--config=${workspaceFolder}/backend/pyproject.toml"],
-            "ruff.nativeServer": "on",
-            "ruff.configuration": "${workspaceFolder}/backend/pyproject.toml"
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "always",
+            "source.fixAll.ruff": "always"
           },
-          "python.analysis.extraPaths": [
-            "${workspaceFolder}/backend",
-            "${workspaceFolder}/backend/.venv/lib/python3.12/site-packages"
+          "python.defaultInterpreterPath": "${workspaceFolder:backend}/.venv/bin/python",
+          "mypy-type-checker.args": [
+            "--config=${workspaceFolder:backend}/pyproject.toml"
           ],
-          "pylint.args": [
-            "--load-plugins",
-            "pylint_django",
-            "--django-settings-module",
-            "config.settings.development"
-          ]
+          "ruff.nativeServer": "on",
+          "ruff.configuration": "${workspaceFolder:backend}/pyproject.toml"
         }
+        // "python.analysis.extraPaths": [
+        //   "${workspaceFolder}/backend"
+        //   // "${workspaceFolder}/backend/.venv/lib/python3.12/site-packages"
+        // ]
+        // "pylint.args": [
+        //   "--load-plugins",
+        //   "pylint_django",
+        //   "--django-settings-module",
+        //   "config.settings.development"
+        // ]
+      }
     },
     "features": {
       "ghcr.io/devcontainers/features/aws-cli:1": {},

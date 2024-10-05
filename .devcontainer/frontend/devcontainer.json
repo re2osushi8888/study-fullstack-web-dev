@@ -1,9 +1,11 @@
 {
-  "name": "Frontend Container",
-  "dockerComposeFile": ["../../docker-compose.yml"],
-  "service": "frontend",
-  "shutdownAction": "none",
-  "workspaceFolder": "/workspace/frontend",
+	"name": "Frontend Container",
+	"dockerComposeFile": [
+		"../../docker-compose.yml"
+	],
+	"service": "frontend",
+	"shutdownAction": "none",
+	"workspaceFolder": "/workspace/frontend",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -27,15 +29,14 @@
 					"quickfix",
 					"tsimporter",
 					"yoavbls",
-          "tailwindcss"
+					"tailwindcss"
 				]
 			}
 		}
 	},
-  "features": {
+	"features": {
 		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/devcontainers-community/npm-features/typescript:1": {},
-    "ghcr.io/devcontainers/features/git:1": {}
+		"ghcr.io/devcontainers/features/git:1": {}
 	}
 }
-
