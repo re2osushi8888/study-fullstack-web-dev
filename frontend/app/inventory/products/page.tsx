@@ -11,13 +11,21 @@ type ProductData = {
   description: string;
 };
 
-export default function Page() {
-  const [data, setData] = useState<Array<ProductData>>([])
+type Inputedata = {
+  id: string
+  name: string
+  price: number
+  description: string
+}
 
+export default function Page() {
+  // 読み込みデータを保持
+  const [data, setData] = useState<Array<ProductData>>([])
   useEffect(() => {
     setData(productsData)
   }, [])
 
+  // 新規登録処理、新規登録行の表示状態を保持
   const [shownNewRow, setShownNewRow] = useState(false)
   const handleShowNewRow = (event:React.MouseEvent<HTMLElement>) => {
     event.preventDefault()
