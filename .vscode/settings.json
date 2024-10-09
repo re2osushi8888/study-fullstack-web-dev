@@ -2,23 +2,23 @@
   "cSpell.words": [
     "asgi",
     "autodocstring",
+    "biomejs",
     "charliermarsh",
+    "devcontainer",
     "errorlens",
     "mypy",
     "njpwerner",
     "oderwat",
+    "pmneo",
     "pylint",
     "pyproject",
+    "quickfix",
     "shardulm",
+    "shyim",
+    "tailwindcss",
     "tsimporter",
     "usernamehw",
     "venv",
-    "biomejs",
-    "devcontainer",
-    "pmneo",
-    "quickfix",
-    "tsimporter",
-    "yoavbls",
-    "tailwindcss"
+    "yoavbls"
   ]
 }
