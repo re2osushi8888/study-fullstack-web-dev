@@ -56,12 +56,12 @@ export default function Page({
 			<h3>商品在庫の一覧を表示</h3>
 			<form>
 				<div>
-					<label>商品名：</label>
-					<span>{product.name}</span>
+					<label htmlFor="productName">商品名：</label>
+					<span id="productName">{product.name}</span>
 				</div>
 				<div>
-					<label>数量：</label>
-					<input type="text" />
+					<label htmlFor="quantity">数量：</label>
+					<input type="text" id="quantity" />
 				</div>
 				<button type="submit">商品を仕入れる</button>
 				<button type="submit">商品を卸す</button>
