@@ -27,6 +27,7 @@ export default function Page({
 	// 商品IDにあたる検索条件
 	params: { id: number };
 }) {
+	const paramsId = Number(params.id);
 	//読み込みデータを保持
 	const [product, setProduct] = useState<ProductData>({
 		id: 0,
@@ -38,7 +39,7 @@ export default function Page({
 
 	useEffect(() => {
 		const selectedProduct: ProductData = productsData.find(
-			(v) => v.id === params.id,
+			(v) => v.id === paramsId,
 		) ?? {
 			id: 0,
 			name: '',
@@ -47,11 +48,7 @@ export default function Page({
 		};
 		setProduct(selectedProduct);
 		setData(inventoriesData);
-	}, []);
-	console.log(product);
-	//console.log(productsData);
-	console.log(params.id);
-	//console.log(productsData.find((v) => v.id === params.id));
+	}, [paramsId]);
 
 	return (
 		<>
