@@ -12,13 +12,19 @@ type ProductData = {
 	description: string;
 };
 
+type ProductFormData = {
+	name: string;
+	price: number;
+	description: string;
+};
+
 export default function Page() {
 	const {
 		register,
 		handleSubmit,
 		reset,
 		formState: { errors },
-	} = useForm();
+	} = useForm<ProductFormData>();
 
 	// 読み込みデータを保持
 	const [data, setData] = useState<Array<ProductData>>([]);
@@ -29,7 +35,7 @@ export default function Page() {
 	const [id, setId] = useState<number | null>(0);
 	// submit時のactionを分岐させる
 	const [action, setAction] = useState<string>('');
-	const onSubmit = (event: any): void => {
+	const onSubmit = (event: ProductFormData): void => {
 		const data: ProductData = {
 			id: id,
 			name: event.name,
@@ -156,7 +162,7 @@ export default function Page() {
 						) : (
 							''
 						)}
-						{data.map((data: any) =>
+						{data.map((data: ProductData) =>
 							id === data.id ? (
 								<tr key={data.id}>
 									<td>{data.id}</td>
@@ -212,7 +218,10 @@ export default function Page() {
 										</Link>
 									</td>
 									<td>
-										<button onClick={() => handleEditRow(data.id)}>
+										<button
+											type="button"
+											onClick={() => handleEditRow(data.id)}
+										>
 											更新・削除
 										</button>
 									</td>
