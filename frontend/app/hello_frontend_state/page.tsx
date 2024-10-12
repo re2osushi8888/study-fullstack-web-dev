@@ -1,14 +1,14 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 
 export default function Page() {
-  const [data,setData] = useState({ name: '初期値'})
+	const [data, setData] = useState({ name: '初期値' });
 
-  useEffect(() => {
-    const change = { name: '変更' }
-    setData(change)
-  }, [])
+	useEffect(() => {
+		const change = { name: '変更' };
+		setData(change);
+	}, []);
 
-  return <div>hello {data.name}!</div>
+	return <div>hello {data.name}!</div>;
 }
