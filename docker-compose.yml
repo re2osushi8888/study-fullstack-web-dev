@@ -25,7 +25,9 @@ services:
       dockerfile: backend/Dockerfile
     volumes:
       - .:/workspace:cached
+    working_dir: /workspace/backend
     command: sleep infinity
+    # command: uv run python manage.py runserver 0.0.0.0:8000 --settings config.settings.development
     environment:
       DATABASE_URL: mysql://user:password@db:3306/database
     depends_on:
@@ -41,7 +43,9 @@ services:
       dockerfile: frontend/Dockerfile
     volumes:
       - .:/workspace:cached
+    working_dir: /workspace/frontend
     command: sleep infinity
+    # command: bun dev
     depends_on:
       - backend
     networks:
